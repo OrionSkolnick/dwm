@@ -10,8 +10,8 @@ static const unsigned int gappov    = 40;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "LiberationMono:size=10" };
+static const char dmenufont[]       =   "LiberationMono:size=10";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#504945";
 static const char col_gray3[]       = "#bdae93";
@@ -41,7 +41,6 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	/*{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },*/
-	{ "QJackCtl",  NULL,       NULL,       1 << 5,       0,           -1 },
 };
 
 /* layout(s) */
