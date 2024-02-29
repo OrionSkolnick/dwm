@@ -12,11 +12,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "LiberationMono:size=10" };
 static const char dmenufont[]       =   "LiberationMono:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#313244";
-static const char col_cyan[]        = "#eba0ac";
+static const char col_gray1[]       = "#282828";
+static const char col_gray2[]       = "#504945";
+static const char col_gray3[]       = "#bdae93";
+static const char col_gray4[]       = "#ebdbb2";
+static const char col_cyan[]        = "#cc241d";
 static const unsigned int baralpha = 0XD9;
 static const unsigned int borderalpha = 0XDA;
 static const char *colors[][3]      = {
@@ -82,7 +82,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
-	{ MODKEY,	                XK_b,      spawn,          SHCMD("qutebrowser") },
+	{ MODKEY,	                XK_b,      spawn,          SHCMD("surf https://lite.duckduckgo.com/") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("doas brightnessctl s +1%") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("doas brightnessctl s 1-%") },
 	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD("doas poweroff") },
