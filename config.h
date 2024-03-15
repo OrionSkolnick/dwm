@@ -86,7 +86,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("doas brightnessctl s +1%") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("doas brightnessctl s 1-%") },
 	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD("doas poweroff") },
-	{ Mod4Mask,                     XK_m,      spawn,          SHCMD("amixer -c 1 sset 'Master' toggle") },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("amixer -c 1 sset 'Master' toggle") },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("amixer -c 1 sset 'Master' 1%+") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("amixer -c 1 sset 'Master' 1%-") },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
