@@ -89,6 +89,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("amixer -c 1 sset 'Master' toggle") },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("amixer -c 1 sset 'Master' 1%+") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("amixer -c 1 sset 'Master' 1%-") },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("import /tmp/screenshot.png&&cat /tmp/screenshot.png|xclip -selection clipboard -target image/png -i") },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
