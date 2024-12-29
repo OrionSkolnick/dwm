@@ -10,8 +10,8 @@ static const unsigned int gappov    = 40;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "LiberationMono:size=10" };
-static const char dmenufont[]       =   "LiberationMono:size=10";
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12" };
+static const char dmenufont[]       =   "JetBrains Mono Nerd Font:size=12";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#504945";
 static const char col_gray3[]       = "#bdae93";
@@ -31,16 +31,20 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "H", "I", "V", "S", "T", "W", "M", "G", "B" };
+static const char *tags[] = { "󰋜", "", "", "󰭻", "", "󰷈", "", "󰊗", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
-	/*{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },*/
+	/* class                instance    title       tags mask     isfloating   monitor */
+	{ "Firefox",            NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "mpv",                NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "vlc",                NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "libreoffice",        NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "discord",            NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "ardour",             NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
@@ -89,7 +93,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("amixer -c 1 sset 'Master' toggle") },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("amixer -c 1 sset 'Master' 1%+") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("amixer -c 1 sset 'Master' 1%-") },
-	{ MODKEY,                       XK_q,      spawn,          SHCMD("import /tmp/screenshot.png && cat /tmp/screenshot.png | xclip -selection clipboard -target image/png -i") },
+	{ MODKEY,                       XK_q,      spawn,          SHCMD("import png:- | xclip -selection clipboard -target image/png -i") },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("import -window root png:- | xclip -selection clipboard -target image/png -i") },
 	{ MODKEY,                       XK_z,      spawn,          SHCMD("zathura") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("libreoffice") },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
@@ -143,7 +148,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	//{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
