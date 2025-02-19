@@ -86,7 +86,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          SHCMD("slock") },
-	{ MODKEY,	                      XK_b,      spawn,          SHCMD("firefox $(bookmarks.sh)") },
+	{ MODKEY,	                      XK_b,      spawn,          SHCMD("browser-bookmarks.sh") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("doas brightnessctl s +1%") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("doas brightnessctl s 1-%") },
 	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD("doas poweroff") },
